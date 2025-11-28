@@ -1,0 +1,65 @@
+﻿<Window x:Class="Zadanie10202.Расчет_материла"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zadanie10202"
+        mc:Ignorable="d"
+        Title="Расчет необходимого количества материала" Height="650" Width="500" FontFamily="Bahnschrift Light SemiCondensed" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,5">
+            <TextBlock Text="Тип продукции:" Width="150" VerticalAlignment="Center"/>
+            <ComboBox x:Name="productType" Width="200" DisplayMemberPath="Тип_продукции"
+                     SelectedValuePath="Номер_типа_продукции"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,5">
+            <TextBlock Text="Тип материала:" Width="150" VerticalAlignment="Center"/>
+            <ComboBox x:Name="materialType" Width="200" DisplayMemberPath="Тип_материала"
+                     SelectedValuePath="Номер_типа_материала"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,5">
+            <TextBlock Text="Требуемое количество:" Width="150" VerticalAlignment="Center"/>
+            <TextBox x:Name="requiredQuantity" Width="100"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,5">
+            <TextBlock Text="Количество на складе:" Width="150" VerticalAlignment="Center"/>
+            <TextBox x:Name="stockQuantity" Width="100"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="0,5">
+            <TextBlock Text="Параметр продукции 1:" Width="150" VerticalAlignment="Center"/>
+            <TextBox x:Name="param1" Width="100"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Orientation="Horizontal" Margin="0,5">
+            <TextBlock Text="Параметр продукции 2:" Width="150" VerticalAlignment="Center"/>
+            <TextBox x:Name="param2" Width="100"/>
+        </StackPanel>
+
+        <Button x:Name="calculateBut" Grid.Row="7" Content="Рассчитать" Height="25" Width="120" Margin="10,0,0,0" Background="#546F94" Foreground="White" Click="calculateBut_Click"/>
+
+        <GroupBox Grid.Row="8" Header="Результат расчета" Margin="0,10">
+            <StackPanel>
+                <TextBlock x:Name="resultM" TextWrapping="Wrap" Margin="10" FontSize="14"/>
+            </StackPanel>
+        </GroupBox>
+
+        <Button x:Name="closeBut" Grid.Row="9" Content="Закрыть" Height="25" Width="120" Margin="10,0,0,0" Background="#546F94" Foreground="White" HorizontalAlignment="Right" Click="closeBut_Click"/>
+    </Grid>
+</Window>
